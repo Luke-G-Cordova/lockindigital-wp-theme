@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Typography */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #2c3e50;
+  background-color: #f9f9f9;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+a.btn {
+  @apply bg-yellow text-graydark px-6 py-3 no-underline rounded-lg font-semibold;
+}
+
+/* Layout */
+section {
+  @apply py-12 px-8;
+}
+
+/* Services Grid */
+.services-preview li {
+  @apply bg-white border border-gray-200 p-8 rounded;
+}
+
+/* Navigation Menu */
+.menu-item > a {
+  @apply text-white font-medium px-3 py-2 rounded transition whitespace-nowrap;
+}
+
+.menu-item > a:hover,
+.menu-item-has-children > a:has(+ .sub-menu:hover) {
+  @apply bg-white/10 text-white font-medium rounded;
+}
+
+.current-menu-item > a {
+  @apply text-white border-b border-yellow/60;
+}
+
+.menu-item-has-children > a::after {
+  content: ' ▼';
+  font-size: 0.75rem;
+}
+
+.menu-item-has-children {
+  position: relative;
+}
+
+.menu-item-has-children > .sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.5rem;
+  min-width: 12rem;
+  background-color: #1f2937; /* Tailwind gray-800 */
+  color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(0.98);
+  transition: all 0.25s ease;
+  z-index: 50;
+}
+
+.menu-item-has-children:hover > .sub-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.sub-menu > li > a {
+  display: block;
+  padding: 0.75rem 1rem;
+  transition: background 0.2s ease;
+  border-radius: 0.5rem;
+}
+
+.sub-menu > li > a:hover {
+  border-radius: 0.5rem;
+  @apply bg-white/10 text-white;
+}
