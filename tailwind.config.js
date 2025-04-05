@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         yellow: '#FFCF3F',
         graydark: '#2C3E50',
+        blue: '#005792',
       },
     },
     screens: {

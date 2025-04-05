@@ -6,18 +6,12 @@ get_header(); ?>
 
 <main class="homepage">
   <!-- Hero Section -->
-  <section class="hero bg-[#2C3E50] text-white py-20 text-center">
-    <div class="container mx-auto px-4">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-sr>Marketing Built for Builders</h1>
-      <p class="text-lg md:text-xl mb-6" data-sr>We help construction businesses grow with tailored digital strategies that work.</p>
-      <a href="/contact" class="btn bg-[#FFCF3F] text-[#2C3E50] py-3 px-6 rounded-lg font-semibold hover:bg-yellow-400 transition" data-sr>Let's Talk</a>
-    </div>
-  </section>
+  <?php get_template_part("template-parts/hero-section"); ?>
 
   <!-- Services Preview -->
-  <section class="services-preview bg-white py-20">
+  <section class="services-preview bg-graydark py-20">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-10" data-sr>Our Services</h2>
+      <h2 class="text-3xl text-white font-bold text-center mb-10" data-sr>Our Services</h2>
       <ul class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         <?php if (have_rows('services')): while (have_rows('services')): the_row(); ?>
           <li class="service-box bg-[#F9F9F9] p-6 rounded-lg shadow hover:shadow-lg transition" data-sr>
@@ -31,7 +25,7 @@ get_header(); ?>
   </section>
 
   <!-- Trust Section -->
-  <section class="trust bg-[#2C3E50] text-white py-20 text-center">
+  <section class="trust bg-white text-graydark py-20 text-center">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-6" data-sr>Real Results for Real Businesses</h2>
       <p class="mb-8 max-w-2xl mx-auto" data-sr>We’ve helped family-run companies just like yours grow with marketing that works. No fluff, just results.</p>

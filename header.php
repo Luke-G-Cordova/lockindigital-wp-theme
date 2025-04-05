@@ -12,7 +12,7 @@
   $email = get_theme_mod('lockin_email');
 ?>
   
-<header class="bg-graydark text-white shadow-md">
+<header class="sticky top-0 z-40 bg-blue text-white shadow-sm">
   <div class="container mx-auto px-4 py-4 flex items-center justify-between">
 
     <!-- Logo -->

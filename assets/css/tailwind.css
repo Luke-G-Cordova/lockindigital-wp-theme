@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-dark: #2c3e50;
+  --primary-light: #ffcf3f;
+}
 /* Typography */
 body {
   font-family: 'Open Sans', sans-serif;
