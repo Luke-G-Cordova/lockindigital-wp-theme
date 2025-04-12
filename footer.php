@@ -1,4 +1,4 @@
- <footer>
+  <footer>
     <p>&copy; <?php echo date('Y'); ?> Lock In Digital</p>
   </footer>
   <?php wp_footer(); ?>

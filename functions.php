@@ -83,3 +83,44 @@ function lockin_customize_register($wp_customize) {
   ]);
 }
 add_action('customize_register', 'lockin_customize_register');
+
+
+if (!session_id()) {
+  session_start();
+}
+function lid_handle_contact_form() {
+  if (
+    isset($_POST['lid_contact_form_submitted']) &&
+    isset($_POST['lid_contact_nonce']) &&
+    wp_verify_nonce($_POST['lid_contact_nonce'], 'lid_contact_form')
+  ) {
+    $name    = sanitize_text_field($_POST['name']);
+    $email   = sanitize_email($_POST['email']);
+    $message = sanitize_textarea_field($_POST['message']);
+
+    // Validate fields
+    if (!empty($name) && !empty($email) && !empty($message)) {
+      $to      = 'luke@lockindigitalpro.com'; // 🔁 Replace with your real email
+      $subject = "New Contact Form Submission from $name";
+      $headers = ['Content-Type: text/html; charset=UTF-8', "Reply-To: $name <$email>"];
+      $body    = "
+        <p><strong>Name:</strong> $name</p>
+        <p><strong>Email:</strong> $email</p>
+        <p><strong>Message:</strong></p>
+        <p>$message</p>
+      ";
+
+      wp_mail($to, $subject, $body, $headers);
+
+      // Optional: store a success flag to display later
+      $_SESSION['lid_contact_success'] = true;
+    } else {
+      $_SESSION['lid_contact_success'] = false;
+    }
+
+    // Optional: redirect to prevent resubmission
+    wp_redirect(home_url($_SERVER['REQUEST_URI']));
+    exit;
+  }
+}
+add_action('init', 'lid_handle_contact_form');
