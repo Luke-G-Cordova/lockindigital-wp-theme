@@ -1,5 +1,6 @@
 <?php
-function lockin_enqueue_scripts() {
+function lockin_enqueue_scripts()
+{
   wp_enqueue_style('lockin-style', get_stylesheet_uri(), [], filemtime(get_stylesheet_directory() . '/style.css'));
   wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/style.css');
   wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans&display=swap', false);
@@ -8,14 +9,22 @@ function lockin_enqueue_scripts() {
 
 add_action('wp_enqueue_scripts', 'lockin_enqueue_scripts');
 
-function lockin_theme_setup() {
+function lockin_theme_setup()
+{
   register_nav_menus([
     'main_menu' => 'Main Menu',
   ]);
 }
 add_action('after_setup_theme', 'lockin_theme_setup');
 
-function lockin_register_menus() {
+function theme_slug_setup()
+{
+  add_theme_support('title-tag');
+}
+add_action('after_setup_theme', 'theme_slug_setup');
+
+function lockin_register_menus()
+{
   register_nav_menus([
     'main_menu' => 'Main Navigation',
   ]);
@@ -31,14 +40,15 @@ add_theme_support('custom-logo', [
   'header-text' => ['site-title', 'site-description'],
 ]);
 
-function lockin_customize_register($wp_customize) {
+function lockin_customize_register($wp_customize)
+{
   $wp_customize->add_section('lockin_theme_settings', [
     'title'    => __('Theme Settings', 'lockin'),
     'priority' => 30,
   ]);
 
   // === Phone ===
-  $wp_customize->add_setting('lockin_phone_number', ['default'   => '','transport' => 'refresh']);
+  $wp_customize->add_setting('lockin_phone_number', ['default'   => '', 'transport' => 'refresh']);
   $wp_customize->add_control('lockin_phone_number_control', [
     'label'    => __('Phone Number', 'lockin'),
     'section'  => 'lockin_theme_settings',
@@ -73,6 +83,26 @@ function lockin_customize_register($wp_customize) {
     'type'    => 'url',
   ]);
 
+
+  // === Instagram Link ===
+  $wp_customize->add_setting('lockin_instagram_url', ['default' => '', 'transport' => 'refresh']);
+  $wp_customize->add_control('lockin_instagram_url_control', [
+    'label'   => __('Instagram Page URL', 'lockin'),
+    'section' => 'lockin_theme_settings',
+    'settings' => 'lockin_instagram_url',
+    'type'    => 'url',
+  ]);
+
+
+  // === Linkedin Link ===
+  $wp_customize->add_setting('lockin_linkedin_url', ['default' => '', 'transport' => 'refresh']);
+  $wp_customize->add_control('lockin_linkedin_url_control', [
+    'label'   => __('Linkedin Page URL', 'lockin'),
+    'section' => 'lockin_theme_settings',
+    'settings' => 'lockin_linkedin_url',
+    'type'    => 'url',
+  ]);
+
   // === Footer Business Address ===
   $wp_customize->add_setting('lockin_address', ['default' => '', 'transport' => 'refresh']);
   $wp_customize->add_control('lockin_address_control', [
@@ -88,7 +118,8 @@ add_action('customize_register', 'lockin_customize_register');
 if (!session_id()) {
   session_start();
 }
-function lid_handle_contact_form() {
+function lid_handle_contact_form()
+{
   if (
     isset($_POST['lid_contact_form_submitted']) &&
     isset($_POST['lid_contact_nonce']) &&
