@@ -1,31 +1,35 @@
 <?php
+
 /**
  * Front Page Template
  */
 get_header(); ?>
 
 <main class="homepage">
+
+  <?php get_template_part('template-parts/social-widget'); ?>
+
   <!-- Hero Section -->
   <?php get_template_part("template-parts/hero-section"); ?>
-
   <!-- Services Preview -->
-  <section class="services-preview bg-graydark py-20">
+  <section class="services-preview bg-primaryGrey py-20">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl text-white font-bold text-center mb-10" data-sr>Our Services</h2>
       <ul class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         <?php if (have_rows('services')): while (have_rows('services')): the_row(); ?>
-          <li class="service-box bg-[#F9F9F9] p-6 rounded-lg shadow hover:shadow-lg transition" data-sr>
-            <h3 class="text-xl font-semibold mb-2"><?php the_sub_field('service_title'); ?></h3>
-            <p class="mb-4"><?php the_sub_field('service_description'); ?></p>
-            <a href="<?php the_sub_field('service_link'); ?>" class="text-[#FFCF3F] font-semibold">Learn More</a>
-          </li>
-        <?php endwhile; endif; ?>
+            <li class="service-box bg-[#F9F9F9] p-6 rounded-lg shadow hover:shadow-lg transition" data-sr>
+              <h3 class="text-xl font-semibold mb-2"><?php the_sub_field('service_title'); ?></h3>
+              <p class="mb-4"><?php the_sub_field('service_description'); ?></p>
+              <a href="<?php the_sub_field('service_link'); ?>" class="text-[#FFCF3F] font-semibold">Learn More</a>
+            </li>
+        <?php endwhile;
+        endif; ?>
       </ul>
     </div>
   </section>
 
   <!-- Trust Section -->
-  <section class="trust bg-white text-graydark py-20 text-center">
+  <section class="trust bg-white text-primaryGrey py-20 text-center">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-6" data-sr>Real Results for Real Businesses</h2>
       <p class="mb-8 max-w-2xl mx-auto" data-sr>We’ve helped family-run companies just like yours grow with marketing that works. No fluff, just results.</p>

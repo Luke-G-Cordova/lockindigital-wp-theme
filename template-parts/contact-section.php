@@ -10,19 +10,19 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label for="name" class="block text-sm font-semibold mb-2">Full Name</label>
-          <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-yellow" required>
+          <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primaryYellow" required>
         </div>
         <div>
           <label for="email" class="block text-sm font-semibold mb-2">Email Address</label>
-          <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-yellow" required>
+          <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primaryYellow" required>
         </div>
       </div>
       <div>
         <label for="message" class="block text-sm font-semibold mb-2">Message</label>
-        <textarea id="message" name="message" rows="6" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-yellow" required></textarea>
+        <textarea id="message" name="message" rows="6" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primaryYellow" required></textarea>
       </div>
       <div class="text-center">
-        <button type="submit" class="bg-yellow text-graydark font-semibold px-6 py-3 rounded-lg hover:bg-yellow-400 transition">Send Message</button>
+        <button type="submit" class="bg-primaryYellow text-graydark font-semibold px-6 py-3 rounded-lg hover:bg-yellow-400 transition">Send Message</button>
       </div>
     </form>
   </div>

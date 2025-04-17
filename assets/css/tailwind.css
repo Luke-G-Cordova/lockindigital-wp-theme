@@ -22,7 +22,7 @@ h3 {
 }
 
 a.btn {
-  @apply bg-yellow text-graydark px-6 py-3 no-underline rounded-lg font-semibold;
+  @apply bg-primaryYellow text-primaryGrey px-6 py-3 no-underline rounded-lg font-semibold;
 }
 
 /* Layout */
@@ -46,7 +46,7 @@ section {
 }
 
 .current-menu-item > a {
-  @apply text-white border-b border-yellow/60;
+  @apply text-white border-b border-primaryYellow/60;
 }
 
 .menu-item-has-children > a::after {

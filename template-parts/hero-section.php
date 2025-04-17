@@ -1,11 +1,10 @@
-
-<section class="relative bg-blue text-white overflow-hidden">
+<section class="relative bg-primaryBlue text-white overflow-hidden">
   <div class="container mx-auto px-4 py-20 grid grid-cols-1 md:grid-cols-2 items-center gap-10 relative z-10">
     <!-- Hero Text Content -->
     <div>
       <h1 class="text-4xl font-bold mb-4 text-white" data-sr>From Invisible to Invincible</h1>
       <p class="text-lg mb-6" data-sr>We help contractors attract more local leads with digital marketing that works.</p>
-      <a href="/contact" class="btn bg-yellow text-graydark px-6 py-3 no-underline rounded-lg font-semibold" data-sr>Let's Talk</a>
+      <a href="/contact" class="btn bg-primaryYellow text-primaryGrey px-6 py-3 no-underline rounded-lg font-semibold" data-sr>Let's Talk</a>
     </div>
 
   </div>
@@ -20,7 +19,7 @@
     <div class="absolute bottom-0 left-0 right-0 weebleWobbleWrapper z-10">
       <div class="weebleWobble absolute a-delay-1">
         <div>
-          <img src="<?= get_template_directory_uri(); ?>/assets/images/valuable-lead.png" class="weeble-character" alt="Customer 1"/>
+          <img src="<?= get_template_directory_uri(); ?>/assets/images/valuable-lead.png" class="weeble-character" alt="Customer 1" />
         </div>
       </div>
       <div class="weebleWobble absolute a-delay-2">
@@ -63,26 +62,51 @@
 
   <div class="custom-shape-divider-bottom-1743813601">
     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
+      <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" class="shape-fill"></path>
     </svg>
   </div>
 
   <style>
     @keyframes slideInStore {
-      0% { right: -30rem; opacity: 0; }
-      100% { right: 30px; opacity: 1; }
+      0% {
+        right: -30rem;
+        opacity: 0;
+      }
+
+      100% {
+        right: 30px;
+        opacity: 1;
+      }
     }
 
     @keyframes showOpenStore {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
     }
 
     @keyframes weebleWalkIn {
-      0%  {right: 100vw; top:0px;}
-      25% {top: -10px;}
-      75% {top: 3px;}
-      100%  {right: 110px; top:0px;}
+      0% {
+        right: 100vw;
+        top: 0px;
+      }
+
+      25% {
+        top: -10px;
+      }
+
+      75% {
+        top: 3px;
+      }
+
+      100% {
+        right: 110px;
+        top: 0px;
+      }
     }
 
     .animate-slideInStore {
@@ -94,7 +118,7 @@
       animation-fill-mode: forwards;
     }
 
-    .weebleWobbleWrapper{
+    .weebleWobbleWrapper {
       min-height: 180px;
     }
 
@@ -111,11 +135,12 @@
       transform: rotate(10deg);
       transition: transform 1s;
     }
-    
-    .weebleWobble > div{
+
+    .weebleWobble>div {
       transition: transform .4s;
     }
-    .weebleWobble > div:hover {
+
+    .weebleWobble>div:hover {
       transform: rotate(-20deg);
       transition: transform 0.5s;
     }
@@ -126,16 +151,40 @@
 
     .weeble-character:hover {
       transform: rotate(10deg) scale(1.4) translate(0, -30px);
-      transition:transform .2s
+      transition: transform .2s
     }
-    .a-delay-1{ animation-delay: 1.5s; }
-    .a-delay-2{ animation-delay: 2.5s; }
-    .a-delay-3{ animation-delay: 3.5s; }
-    .a-delay-4{ animation-delay: 4.5s; }
-    .a-delay-5{ animation-delay: 5.5s; }
-    .a-delay-6{ animation-delay: 6.5s; }
-    .a-delay-7{ animation-delay: 7.5s; }
-    .a-delay-8{ animation-delay: 8.5s; }
+
+    .a-delay-1 {
+      animation-delay: 1.5s;
+    }
+
+    .a-delay-2 {
+      animation-delay: 2.5s;
+    }
+
+    .a-delay-3 {
+      animation-delay: 3.5s;
+    }
+
+    .a-delay-4 {
+      animation-delay: 4.5s;
+    }
+
+    .a-delay-5 {
+      animation-delay: 5.5s;
+    }
+
+    .a-delay-6 {
+      animation-delay: 6.5s;
+    }
+
+    .a-delay-7 {
+      animation-delay: 7.5s;
+    }
+
+    .a-delay-8 {
+      animation-delay: 8.5s;
+    }
 
     .custom-shape-divider-bottom-1743813601 {
       position: absolute;
@@ -161,5 +210,5 @@
     }
   </style>
 
-  
+
 </section>

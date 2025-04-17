@@ -13,7 +13,7 @@
   $email = get_theme_mod('lockin_email');
   ?>
 
-  <header class="sticky top-0 z-40 bg-blue text-white shadow-sm">
+  <header class="sticky top-0 z-40 bg-primaryBlue text-white shadow-sm">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
 
       <!-- Logo -->
@@ -23,7 +23,7 @@
             <?= get_custom_logo(); ?>
           </a>
         <?php else : ?>
-          <a href="<?= esc_url(home_url('/')); ?>" class="text-xl font-bold text-yellow">
+          <a href="<?= esc_url(home_url('/')); ?>" class="text-xl font-bold text-primaryYellow">
             <?= get_bloginfo('name'); ?>
           </a>
         <?php endif; ?>
@@ -32,7 +32,7 @@
       <!-- Phone Button -->
       <?php if ($phone): ?>
         <a href="tel:<?= preg_replace('/[^0-9]/', '', $phone); ?>"
-          class="sm:text-base bg-yellow text-graydark font-semibold px-3 sm:px-4 py-2 rounded hover:bg-yellow-400 transition sm:order-3 whitespace-nowrap">
+          class="sm:text-base bg-primaryYellow text-primaryGrey font-semibold px-3 sm:px-4 py-2 rounded hover:bg-yellow-400 transition sm:order-3 whitespace-nowrap">
           <?= esc_html($phone); ?>
         </a>
       <?php endif; ?>
@@ -65,7 +65,7 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="sm:hidden hidden px-4 pb-4 bg-graydark">
+    <div id="mobile-menu" class="sm:hidden hidden px-4 pb-4 bg-primaryGrey">
       <?php
       wp_nav_menu([
         'theme_location' => 'main_menu',

@@ -4,6 +4,7 @@ function lockin_enqueue_scripts()
   wp_enqueue_style('lockin-style', get_stylesheet_uri(), [], filemtime(get_stylesheet_directory() . '/style.css'));
   wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/style.css');
   wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans&display=swap', false);
+  wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
   wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/style.css');
 }
 
@@ -114,7 +115,10 @@ function lockin_customize_register($wp_customize)
 }
 add_action('customize_register', 'lockin_customize_register');
 
-
+/**
+ * Contact form email handling
+ * TODO: need to get a smtp server for this to work
+ */
 if (!session_id()) {
   session_start();
 }
