@@ -7,13 +7,6 @@ get_header(); ?>
   <!-- Hero Section -->
   <?php get_template_part("template-parts/hero-section"); ?>
 
-  <!-- <section class="bg-primaryGrey text-white py-20">
-    <div class="container mx-auto px-6 text-center max-w-4xl" data-sr>
-      <h1 class="text-4xl font-bold mb-4">Marketing Agency in Roseville Built for Local Businesses</h1>
-      <p class="text-lg">Lock In Digital is a local Roseville marketing company helping businesses grow with results-driven SEO, PPC, and web design.</p>
-    </div> -->
-  </section>
-
   <!-- Services Section -->
   <section class="py-20">
     <div class="container mx-auto px-6 max-w-6xl">

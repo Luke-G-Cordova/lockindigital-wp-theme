@@ -4,14 +4,14 @@
     <!-- Hero Text Content -->
     <div>
       <h1 class="text-4xl font-bold mb-4 text-white" data-sr>
-        <?php echo esc_html(get_field('hero_heading')) ?: "You Built The Business With Your Hands. We'll Make Sure People See It."; ?>
+        <?php echo lid_field('hero_heading', "You Built The Business With Your Hands. We'll Make Sure People See It."); ?>
       </h1>
       <p class="text-lg mb-6" data-sr>
-        <?php echo esc_html(get_field('hero_subheading')) ?: "We help contractors attract more local leads with digital marketing that works."; ?>
+        <?php echo lid_field('hero_subheading', "We help contractors attract more local leads with digital marketing that works."); ?>
       </p>
 
       <a href="/contact" class=" btn bg-primaryYellow text-primaryGrey px-6 py-3 no-underline rounded-lg font-semibold" data-sr>
-        <?php echo get_field('hero_button_text') ?: "Lets Talk"; ?>
+        <?php echo lid_field('hero_button_text', "Let's Talk"); ?>
       </a>
     </div>
   </div>
