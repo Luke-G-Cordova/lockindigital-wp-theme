@@ -30,7 +30,7 @@ get_header(); ?>
 
       <!-- Team Section -->
       <div class="mb-20" data-sr>
-        <h2 class="text-3xl font-bold text-center mb-12">Meet the Founders</h2>
+        <h2 class="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
         <div class="grid md:grid-cols-2 gap-12">
 
           <!-- Luke -->
