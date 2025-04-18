@@ -1,5 +1,7 @@
 <?php
 
+namespace LockInDigital\Utils;
+
 class TemplateParser
 {
   /**

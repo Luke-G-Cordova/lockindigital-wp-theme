@@ -1,4 +1,6 @@
 <?php
+
+require_once get_template_directory() . '/inc/autoload.php'; // Make sure this autoloader is always called first
 require_once get_template_directory() . '/inc/helpers.php';
 
 function lockin_enqueue_scripts()
@@ -16,6 +18,7 @@ function lockin_theme_setup()
 {
   register_nav_menus([
     'main_menu' => 'Main Menu',
+    'city_menu' => 'City Menu',
   ]);
 }
 add_action('after_setup_theme', 'lockin_theme_setup');

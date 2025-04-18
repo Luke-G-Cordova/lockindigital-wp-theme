@@ -1,5 +1,6 @@
 <?php
-require_once get_template_directory() . '/inc/TemplateParser.php';
+
+use LockInDigital\Utils\TemplateParser;
 
 function lid_field($field_name, $default = '', $sanitize = 'html', $post_id = null)
 {

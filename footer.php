@@ -28,6 +28,23 @@
         </ul>
       </div>
 
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">Cities</h4>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <?php
+          wp_nav_menu([
+            'theme_location' => 'city_menu',
+            'container' => false,
+            'menu_class' => 'flex flex-col space-y-3 text-sm',
+            'fallback_cb' => false,
+            'depth' => 1,
+          ]);
+          ?>
+        </ul>
+      </div>
+
       <?php
       if (!isset($phone)) $phone = get_theme_mod('lockin_phone_number');
       if (!isset($email)) $email = get_theme_mod('lockin_email');
