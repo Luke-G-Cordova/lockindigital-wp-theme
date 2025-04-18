@@ -11,20 +11,30 @@ get_header(); ?>
 
   <!-- Hero Section -->
   <?php get_template_part("template-parts/hero-section"); ?>
-  <!-- Services Preview -->
-  <section class="services-preview bg-primaryGrey py-20">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl text-white font-bold text-center mb-10" data-sr>Our Services</h2>
-      <ul class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-        <?php if (have_rows('services')): while (have_rows('services')): the_row(); ?>
-            <li class="service-box bg-[#F9F9F9] p-6 rounded-lg shadow hover:shadow-lg transition" data-sr>
-              <h3 class="text-xl font-semibold mb-2"><?php the_sub_field('service_title'); ?></h3>
-              <p class="mb-4"><?php the_sub_field('service_description'); ?></p>
-              <a href="<?php the_sub_field('service_link'); ?>" class="text-[#FFCF3F] font-semibold">Learn More</a>
-            </li>
-        <?php endwhile;
-        endif; ?>
-      </ul>
+
+  <!-- Services Section -->
+  <section class="py-20 bg-primaryGrey">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <h2 class="text-3xl font-bold text-center mb-12 text-white" data-sr>What We Offer</h2>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <!-- SEO -->
+        <div class="bg-[#F9F9F9] p-6 rounded-lg shadow" data-sr>
+          <h3 class="text-xl font-semibold mb-2">SEO Services</h3>
+          <p class="mb-4">Climb the local rankings with our proven search engine optimization strategies. Get found for “seo near me,” “SEO company,” and more.</p>
+        </div>
+
+        <!-- PPC -->
+        <div class="bg-[#F9F9F9] p-6 rounded-lg shadow" data-sr>
+          <h3 class="text-xl font-semibold mb-2">PPC & Google Ads</h3>
+          <p class="mb-4">As a trusted PPC agency, we manage Google Ads campaigns that actually convert. From search to retargeting, we’re your go-to Adwords company.</p>
+        </div>
+
+        <!-- Web Design -->
+        <div class="bg-[#F9F9F9] p-6 rounded-lg shadow" data-sr>
+          <h3 class="text-xl font-semibold mb-2">Web Design</h3>
+          <p class="mb-4">Your website should work as hard as you do. Our web design company builds fast, modern, WordPress websites optimized for SEO and conversions.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -42,9 +52,9 @@ get_header(); ?>
   </section>
 
   <!-- How It Works -->
-  <section class="how-it-works bg-white py-20">
+  <section class="how-it-works bg-primaryYellow text-gray-900 py-20">
     <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-8" data-sr>How It Works</h2>
+      <h2 class="text-3xl font-bold text-primaryGrey mb-8" data-sr>How It Works</h2>
       <ol class="space-y-6 text-lg max-w-xl mx-auto" data-sr>
         <li><strong>Step 1:</strong> Call Us</li>
         <li><strong>Step 2:</strong> Get a Custom Plan</li>
@@ -54,10 +64,11 @@ get_header(); ?>
   </section>
 
   <!-- CTA Section -->
-  <section class="cta bg-[#FFCF3F] text-[#2C3E50] py-20 text-center">
-    <div class="container mx-auto px-4">
-      <p class="text-2xl font-bold mb-6" data-sr>Feeling Invisible Online? Let’s Fix That.</p>
-      <a href="/contact" class="btn bg-[#2C3E50] text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition" data-sr>Schedule a Free Strategy Call</a>
+  <section class="py-20">
+    <div class="container mx-auto px-6 text-center max-w-3xl" data-sr>
+      <h2 class="text-3xl font-bold mb-4">Ready to Grow?</h2>
+      <p class="text-lg mb-6">Let’s build a marketing system that works for your business — not just another cookie-cutter campaign.</p>
+      <a href="/contact" class="inline-block bg-primaryBlue text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">Get a Free Strategy Session</a>
     </div>
   </section>
 </main>
