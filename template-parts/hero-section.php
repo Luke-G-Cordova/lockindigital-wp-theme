@@ -1,12 +1,19 @@
 <section class="relative bg-primaryBlue text-white overflow-hidden">
+
   <div class="container mx-auto px-4 py-20 grid grid-cols-1 md:grid-cols-2 items-center gap-10 relative z-10">
     <!-- Hero Text Content -->
     <div>
-      <h1 class="text-4xl font-bold mb-4 text-white" data-sr>You Built The Business With Your Hands. We'll Make Sure People See It.</h1>
-      <p class="text-lg mb-6" data-sr>We help contractors attract more local leads with digital marketing that works.</p>
-      <a href="/contact" class="btn bg-primaryYellow text-primaryGrey px-6 py-3 no-underline rounded-lg font-semibold" data-sr>Let's Talk</a>
-    </div>
+      <h1 class="text-4xl font-bold mb-4 text-white" data-sr>
+        <?php echo esc_html(get_field('hero_heading')) ?: "You Built The Business With Your Hands. We'll Make Sure People See It."; ?>
+      </h1>
+      <p class="text-lg mb-6" data-sr>
+        <?php echo esc_html(get_field('hero_subheading')) ?: "We help contractors attract more local leads with digital marketing that works."; ?>
+      </p>
 
+      <a href="/contact" class=" btn bg-primaryYellow text-primaryGrey px-6 py-3 no-underline rounded-lg font-semibold" data-sr>
+        <?php echo get_field('hero_button_text') ?: "Lets Talk"; ?>
+      </a>
+    </div>
   </div>
 
   <!-- Hero Image Transition -->
