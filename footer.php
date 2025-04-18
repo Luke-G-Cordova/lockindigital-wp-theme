@@ -1,6 +1,3 @@
-<!-- <footer>
-  <p>&copy; <?php echo date('Y'); ?> Lock In Digital</p>
-</footer> -->
 <!-- Footer Section -->
 <footer class="bg-primaryGrey text-white py-12 mt-20">
   <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -86,6 +83,18 @@
 
   toggle.addEventListener('click', () => {
     menu.classList.toggle('hidden');
+  });
+</script>
+
+<!-- ScrollReveal Animation -->
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+  ScrollReveal().reveal('[data-sr]', {
+    distance: '20px',
+    origin: 'bottom',
+    opacity: 0,
+    duration: 600,
+    interval: 100
   });
 </script>
 </body>

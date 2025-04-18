@@ -5,9 +5,9 @@
  */
 get_header(); ?>
 
-<main class="homepage">
+<?php get_template_part('template-parts/social-widget'); ?>
 
-  <?php get_template_part('template-parts/social-widget'); ?>
+<main class="homepage">
 
   <!-- Hero Section -->
   <?php get_template_part("template-parts/hero-section"); ?>
@@ -63,15 +63,3 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
-
-<!-- ScrollReveal Animation -->
-<script src="https://unpkg.com/scrollreveal"></script>
-<script>
-  ScrollReveal().reveal('[data-sr]', {
-    distance: '20px',
-    origin: 'bottom',
-    opacity: 0,
-    duration: 600,
-    interval: 100
-  });
-</script>
