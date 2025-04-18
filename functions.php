@@ -9,42 +9,36 @@ function lockin_enqueue_scripts()
   wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/style.css');
   wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans&display=swap', false);
   wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
-  wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/style.css');
+  // TODO: the following loads a main.js file: wp_enqueue_script('lockin-main', get_template_directory_uri() . '/assets/js/main.js', [], filemtime(get_template_directory() . '/assets/js/main.js'), true);
 }
 
 add_action('wp_enqueue_scripts', 'lockin_enqueue_scripts');
 
 function lockin_theme_setup()
 {
+  // menu support
   register_nav_menus([
     'main_menu' => 'Main Menu',
     'city_menu' => 'City Menu',
   ]);
+
+  // logo support
+  add_theme_support('custom-logo', [
+    'height'      => 60,
+    'width'       => 200,
+    'flex-height' => true,
+    'flex-width'  => true,
+    'header-text' => ['site-title', 'site-description'],
+  ]);
+
+  // Allow wordpress to dynamically handle title tags in head
+  add_theme_support('title-tag');
+
+  // add_theme_support('html5', ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption']);
+  // add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'lockin_theme_setup');
 
-function theme_slug_setup()
-{
-  add_theme_support('title-tag');
-}
-add_action('after_setup_theme', 'theme_slug_setup');
-
-function lockin_register_menus()
-{
-  register_nav_menus([
-    'main_menu' => 'Main Navigation',
-  ]);
-}
-add_action('after_setup_theme', 'lockin_register_menus');
-
-
-add_theme_support('custom-logo', [
-  'height'      => 60,
-  'width'       => 200,
-  'flex-height' => true,
-  'flex-width'  => true,
-  'header-text' => ['site-title', 'site-description'],
-]);
 
 function lockin_customize_register($wp_customize)
 {
@@ -69,15 +63,6 @@ function lockin_customize_register($wp_customize)
     'section' => 'lockin_theme_settings',
     'settings' => 'lockin_email',
     'type'    => 'email',
-  ]);
-
-  // === CTA Headline ===
-  $wp_customize->add_setting('lockin_cta_headline', ['default' => '', 'transport' => 'refresh']);
-  $wp_customize->add_control('lockin_cta_headline_control', [
-    'label'   => __('Homepage CTA Headline', 'lockin'),
-    'section' => 'lockin_theme_settings',
-    'settings' => 'lockin_cta_headline',
-    'type'    => 'text',
   ]);
 
   // === Facebook Link ===
@@ -123,6 +108,7 @@ add_action('customize_register', 'lockin_customize_register');
 /**
  * Contact form email handling
  * TODO: need to get a smtp server for this to work
+ * TODO: add a class for this in /inc/Utils
  */
 if (!session_id()) {
   session_start();
