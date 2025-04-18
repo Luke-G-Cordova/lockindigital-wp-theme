@@ -1,4 +1,5 @@
 <?php
+require_once get_template_directory() . '/inc/TemplateParser.php';
 
 function lid_field($field_name, $default = '', $sanitize = 'html', $post_id = null)
 {
@@ -6,6 +7,12 @@ function lid_field($field_name, $default = '', $sanitize = 'html', $post_id = nu
 
   if (empty($value)) {
     $value = $default;
+  }
+
+  if (TemplateParser::hasTags($value)) {
+    $tagsArray = TemplateParser::getTags($value);
+    $data = TemplateParser::getAcfData($tagsArray);
+    $value = TemplateParser::render($value, $data);
   }
 
   switch ($sanitize) {

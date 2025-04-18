@@ -10,7 +10,7 @@ get_header(); ?>
   <!-- Services Section -->
   <section class="py-20 bg-primaryGrey">
     <div class="container mx-auto px-6 max-w-6xl">
-      <h2 class="text-3xl font-bold text-center mb-12 text-white" data-sr>What We Offer in <?php echo ucwords(lid_field('city_name', 'Your City')) ?></h2>
+      <h2 class="text-3xl font-bold text-center mb-12 text-white" data-sr>What We Offer in <?php echo ucwords(lid_field('city_name', 'Your City') . " " . lid_field('state_prefix', 'Your State')) ?></h2>
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <!-- SEO -->
         <div class="bg-[#F9F9F9] p-6 rounded-lg shadow" data-sr>
