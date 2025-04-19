@@ -1,17 +1,21 @@
 <section class="relative bg-primaryBlue text-white overflow-hidden">
-
+  <?php
+  $heroHeading = ucwords(lid_field('hero_heading', "You Built The Business With Your Hands. We'll Make Sure People See It."));
+  $heroSubHeading = lid_field('hero_subheading', "We help contractors attract more local leads with digital marketing that works.");
+  $heroButtonText = ucwords(lid_field('hero_button_text', "Let's Talk"));
+  ?>
   <div class="container mx-auto px-4 py-20 grid grid-cols-1 md:grid-cols-2 items-center gap-10 relative z-10">
     <!-- Hero Text Content -->
     <div>
       <h1 class="text-4xl font-bold mb-4 text-white" data-sr>
-        <?php echo lid_field('hero_heading', "You Built The Business With Your Hands. We'll Make Sure People See It."); ?>
+        <?php echo _t($heroHeading); ?>
       </h1>
       <p class="text-lg mb-6" data-sr>
-        <?php echo lid_field('hero_subheading', "We help contractors attract more local leads with digital marketing that works."); ?>
+        <?php echo _t($heroSubHeading); ?>
       </p>
 
       <a href="/contact" class=" btn bg-primaryYellow text-primaryGrey px-6 py-3 no-underline rounded-lg font-semibold" data-sr>
-        <?php echo lid_field('hero_button_text', "Let's Talk"); ?>
+        <?php echo _t($heroButtonText); ?>
       </a>
     </div>
   </div>
