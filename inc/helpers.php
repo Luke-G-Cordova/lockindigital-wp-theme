@@ -2,6 +2,11 @@
 
 use LockInDigital\Utils\TemplateParser;
 
+function _t($string)
+{
+  return __($string, 'lockindigital-theme');
+}
+
 function lid_field($field_name, $default = '', $sanitize = 'html', $post_id = null)
 {
   $value = get_field($field_name, $post_id);
@@ -28,9 +33,4 @@ function lid_field($field_name, $default = '', $sanitize = 'html', $post_id = nu
     default:
       return esc_html($value);
   }
-}
-
-function _t($string)
-{
-  return __($string, 'lockindigital-theme');
 }
