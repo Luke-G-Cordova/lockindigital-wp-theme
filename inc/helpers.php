@@ -29,3 +29,8 @@ function lid_field($field_name, $default = '', $sanitize = 'html', $post_id = nu
       return esc_html($value);
   }
 }
+
+function _t($string)
+{
+  return __($string, 'lockindigital-theme');
+}
