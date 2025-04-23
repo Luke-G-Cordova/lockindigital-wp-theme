@@ -150,3 +150,14 @@ function lid_handle_contact_form()
   }
 }
 add_action('init', 'lid_handle_contact_form');
+
+
+// Tell ACF to save field groups to a JSON folder in your theme
+add_filter('acf/settings/save_json', function ($path) {
+  return get_stylesheet_directory() . '/acf-json';
+});
+// Tell ACF to load field groups from that same folder
+add_filter('acf/settings/load_json', function ($paths) {
+  $paths[] = get_stylesheet_directory() . '/acf-json';
+  return $paths;
+});
