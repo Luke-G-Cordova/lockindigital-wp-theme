@@ -59,6 +59,42 @@ To get started developing this theme locally:
 
 ---
 
+## 🌎 Global Variables
+
+This theme has several global variables. You can find and manipulate them in wp-admin under `Appearance > Customize > Theme Settings`. Currently the following global variables are set there:
+
+> - **Phone Number**
+> - **Email Address**
+> - **Facebook Page URL**
+> - **Instagram Page URL**
+> - **LinkedIn Page URL**
+> - **X (Twitter) Page URL**
+> - **Business Address**
+
+Use these variables by calling `get_theme_mod('your_needed_var_id')`.
+
+### Setup New Global Variables
+
+In `functions.php` add code resembling the following in the `lockin_customize_register()` function:
+
+```php
+$wp_customize->add_setting('lockin_{your_variable_name}', ['default'   => '', 'transport' => 'refresh']);
+$wp_customize->add_control('lockin_{your_variable_name}_control', [
+   'label'    => _t('Your Variable Name Label'),
+   'section'  => 'lockin_theme_settings',
+   'settings' => 'lockin_{your_variable_name}',
+   'type'     => 'text',
+]);
+```
+
+If you wanted to now call this variable in your php code it should look like the following:
+
+```php
+<?php $myVariable = get_theme_mod('lockin_{your_variable_name}'); ?>
+```
+
+---
+
 ## ⚙️ Advanced Custom Fields (ACF)
 
 This theme **requires** ACF and uses **ACF JSON sync** to ensure field groups are version-controlled and automatically loaded.

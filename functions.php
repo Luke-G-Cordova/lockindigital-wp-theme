@@ -43,14 +43,14 @@ add_action('after_setup_theme', 'lockin_theme_setup');
 function lockin_customize_register($wp_customize)
 {
   $wp_customize->add_section('lockin_theme_settings', [
-    'title'    => __('Theme Settings', 'lockin'),
+    'title'    => _t('Theme Settings'),
     'priority' => 30,
   ]);
 
   // === Phone ===
   $wp_customize->add_setting('lockin_phone_number', ['default'   => '', 'transport' => 'refresh']);
   $wp_customize->add_control('lockin_phone_number_control', [
-    'label'    => __('Phone Number', 'lockin'),
+    'label'    => _t('Phone Number'),
     'section'  => 'lockin_theme_settings',
     'settings' => 'lockin_phone_number',
     'type'     => 'text',
@@ -59,7 +59,7 @@ function lockin_customize_register($wp_customize)
   // === Email ===
   $wp_customize->add_setting('lockin_email', ['default' => '', 'transport' => 'refresh']);
   $wp_customize->add_control('lockin_email_control', [
-    'label'   => __('Email Address', 'lockin'),
+    'label'   => _t('Email Address'),
     'section' => 'lockin_theme_settings',
     'settings' => 'lockin_email',
     'type'    => 'email',
@@ -68,7 +68,7 @@ function lockin_customize_register($wp_customize)
   // === Facebook Link ===
   $wp_customize->add_setting('lockin_facebook_url', ['default' => '', 'transport' => 'refresh']);
   $wp_customize->add_control('lockin_facebook_url_control', [
-    'label'   => __('Facebook Page URL', 'lockin'),
+    'label'   => _t('Facebook Page URL'),
     'section' => 'lockin_theme_settings',
     'settings' => 'lockin_facebook_url',
     'type'    => 'url',
@@ -78,7 +78,7 @@ function lockin_customize_register($wp_customize)
   // === Instagram Link ===
   $wp_customize->add_setting('lockin_instagram_url', ['default' => '', 'transport' => 'refresh']);
   $wp_customize->add_control('lockin_instagram_url_control', [
-    'label'   => __('Instagram Page URL', 'lockin'),
+    'label'   => _t('Instagram Page URL'),
     'section' => 'lockin_theme_settings',
     'settings' => 'lockin_instagram_url',
     'type'    => 'url',
@@ -88,16 +88,25 @@ function lockin_customize_register($wp_customize)
   // === Linkedin Link ===
   $wp_customize->add_setting('lockin_linkedin_url', ['default' => '', 'transport' => 'refresh']);
   $wp_customize->add_control('lockin_linkedin_url_control', [
-    'label'   => __('Linkedin Page URL', 'lockin'),
+    'label'   => _t('Linkedin Page URL'),
     'section' => 'lockin_theme_settings',
     'settings' => 'lockin_linkedin_url',
+    'type'    => 'url',
+  ]);
+
+  // === X (Twitter) Link ===
+  $wp_customize->add_setting('lockin_x_url', ['default' => '', 'transport' => 'refresh']);
+  $wp_customize->add_control('lockin_x_url_control', [
+    'label'   => _t('X (Twitter) Page URL'),
+    'section' => 'lockin_theme_settings',
+    'settings' => 'lockin_x_url',
     'type'    => 'url',
   ]);
 
   // === Footer Business Address ===
   $wp_customize->add_setting('lockin_address', ['default' => '', 'transport' => 'refresh']);
   $wp_customize->add_control('lockin_address_control', [
-    'label'   => __('Business Address (Footer)', 'lockin'),
+    'label'   => _t('Business Address (Footer)'),
     'section' => 'lockin_theme_settings',
     'settings' => 'lockin_address',
     'type'    => 'textarea',
