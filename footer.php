@@ -73,17 +73,6 @@
           <input type="email" name="email" placeholder="Your email" class="w-full px-3 py-2 rounded bg-white text-gray-800 mb-2">
           <button type="submit" class="w-full bg-primaryYellow text-primaryGrey px-3 py-2 rounded font-semibold hover:bg-yellow-400 transition">Subscribe</button>
         </form>
-        <div class="flex space-x-4">
-          <?php if ($fbLink): ?>
-            <a href="<?= esc_url($fbLink); ?>" target="_blank" class="hover:text-primaryYellow">Facebook</a>
-          <?php endif; ?>
-          <?php if ($igLink): ?>
-            <a href="<?= esc_url($igLink); ?>" target="_blank" class="hover:text-primaryYellow">Instagram</a>
-          <?php endif; ?>
-          <?php if ($liLink): ?>
-            <a href="<?= esc_url($liLink); ?>" target="_blank" class="hover:text-primaryYellow">LinkedIn</a>
-          <?php endif; ?>
-        </div>
       </div>
 
     </div>

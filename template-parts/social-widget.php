@@ -9,25 +9,25 @@
     ?>
 
     <?php if ($fbLink): ?>
-      <a href="<?= esc_url($fbLink); ?>" class="hover:text-blue-500" target="_blank" rel="noopener" aria-label="Facebook">
+      <a href="<?= esc_url($fbLink); ?>" class="hover:text-blue-500" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
         <i class="fab fa-facebook-square"></i>
       </a>
     <?php endif; ?>
 
     <?php if ($igLink): ?>
-      <a href="<?= esc_url($igLink); ?>" class="hover:text-pink-500" target="_blank" rel="noopener" aria-label="Instagram">
+      <a href="<?= esc_url($igLink); ?>" class="hover:text-pink-500" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
         <i class="fab fa-instagram"></i>
       </a>
     <?php endif; ?>
 
     <?php if ($twLink): ?>
-      <a href="<?= esc_url($twLink); ?>" class="hover:text-blue-400" target="_blank" rel="noopener" aria-label="Twitter">
+      <a href="<?= esc_url($twLink); ?>" class="hover:text-blue-400" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
         <i class="fab fa-twitter-square"></i>
       </a>
     <?php endif; ?>
 
     <?php if ($liLink): ?>
-      <a href="<?= esc_url($liLink); ?>" class="hover:text-blue-700" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <a href="<?= esc_url($liLink); ?>" class="hover:text-blue-700" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
         <i class="fab fa-linkedin"></i>
       </a>
     <?php endif; ?>
