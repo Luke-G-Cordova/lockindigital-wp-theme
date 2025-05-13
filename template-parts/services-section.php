@@ -6,10 +6,16 @@
   $servicesCard2Heading = ucwords(lid_global_field('services_card_2_heading'));
   $servicesCard2Text = lid_global_field('services_card_2_text');
   $servicesCTAButton = ucwords(lid_global_field('services_cta_button_text'));
+
+  $city = ucwords(lid_field('city_name'));
   ?>
 
   <div class="container mx-auto px-6 max-w-6xl">
-    <h2 class="text-3xl font-bold text-center mb-12 text-white" data-sr><?php echo _t($servicesHeading); ?></h2>
+    <h2 class="text-3xl font-bold text-center mb-12 text-white" data-sr>
+      <?php if ($city != ''): echo _t('What We Offer In ' . $city);
+      else: echo _t($servicesHeading);
+      endif; ?>
+    </h2>
     <div class="grid gap-8 md:grid-cols-2">
       <!-- Card 1 -->
       <?php
