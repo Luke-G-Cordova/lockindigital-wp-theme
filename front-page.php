@@ -13,30 +13,7 @@ get_header(); ?>
   <?php get_template_part("template-parts/hero-section"); ?>
 
   <!-- Services Section -->
-  <section class="py-20 bg-primaryGrey">
-    <div class="container mx-auto px-6 max-w-6xl">
-      <h2 class="text-3xl font-bold text-center mb-12 text-white" data-sr>What We Offer</h2>
-      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <!-- SEO -->
-        <div class="bg-[#F9F9F9] p-6 rounded-lg shadow" data-sr>
-          <h3 class="text-xl font-semibold mb-2">SEO Services</h3>
-          <p class="mb-4">Climb the local rankings with our proven search engine optimization strategies. Get found for “seo near me,” “SEO company,” and more.</p>
-        </div>
-
-        <!-- PPC -->
-        <div class="bg-[#F9F9F9] p-6 rounded-lg shadow" data-sr>
-          <h3 class="text-xl font-semibold mb-2">PPC & Google Ads</h3>
-          <p class="mb-4">As a trusted PPC agency, we manage Google Ads campaigns that actually convert. From search to retargeting, we’re your go-to Adwords company.</p>
-        </div>
-
-        <!-- Web Design -->
-        <div class="bg-[#F9F9F9] p-6 rounded-lg shadow" data-sr>
-          <h3 class="text-xl font-semibold mb-2">Web Design</h3>
-          <p class="mb-4">Your website should work as hard as you do. Our web design company builds fast, modern, WordPress websites optimized for SEO and conversions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <?php get_template_part("template-parts/services-section"); ?>
 
   <!-- Trust Section -->
   <section class="trust bg-white text-primaryGrey py-20 text-center">
