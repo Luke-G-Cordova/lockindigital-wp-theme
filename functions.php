@@ -9,6 +9,7 @@ function lockin_enqueue_scripts()
   wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/style.css');
   wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans&display=swap', false);
   wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+  wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Anton&family=Baskervville:ital@0;1&family=Oswald:wght@200..700&display=swap', false);
   // TODO: the following loads a main.js file: wp_enqueue_script('lockin-main', get_template_directory_uri() . '/assets/js/main.js', [], filemtime(get_template_directory() . '/assets/js/main.js'), true);
 }
 
@@ -39,6 +40,36 @@ function lockin_theme_setup()
 }
 add_action('after_setup_theme', 'lockin_theme_setup');
 
+function lid_enqueue_toc_script()
+{
+  if (is_single()) {
+?>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toc = document.getElementById("toc");
+        if (!toc) return;
+
+        const headers = document.querySelectorAll(".prose h2, .prose h3");
+        headers.forEach((header, i) => {
+          const id = header.innerText.toLowerCase().replace(/\s+/g, '-');
+          header.setAttribute("id", id);
+          header.classList.add("scroll-mt-24");
+          let insert = '';
+          if (header.tagName.toLowerCase() === 'h3') {
+            insert = 'indent-me'
+          }
+          const link = document.createElement("a");
+          link.href = `#${id}`;
+          link.textContent = header.innerText;
+          link.className = `block text-sm text-gray-700 hover:text-primaryBlue transition-all ${insert}`;
+          toc.appendChild(link);
+        });
+      });
+    </script>
+<?php
+  }
+}
+add_action('wp_footer', 'lid_enqueue_toc_script');
 
 function lockin_customize_register($wp_customize)
 {

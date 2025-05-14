@@ -2,13 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .pagination {
+    @apply flex items-center justify-center gap-2;
+  }
+
+  .pagination .page-numbers {
+    @apply px-4 py-2 border border-white/10 rounded-lg text-white text-sm transition hover:bg-primaryBlue hover:border-primaryBlue;
+  }
+
+  .pagination .current {
+    @apply bg-primaryBlue text-white font-semibold border-primaryBlue;
+  }
+
+  .pagination .prev,
+  .pagination .next {
+    @apply font-medium text-primaryYellow;
+  }
+}
+
 :root {
   --primary-dark: #2c3e50;
   --primary-light: #ffcf3f;
 }
 /* Typography */
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
   color: #2c3e50;
   background-color: #f9f9f9;
 }
@@ -16,7 +35,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Anton', sans-serif;
   color: #2c3e50;
   margin-bottom: 1rem;
 }
